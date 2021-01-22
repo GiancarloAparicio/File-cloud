@@ -1,28 +1,28 @@
-# Clon de Mega
+# Mega clone
 
 ## Requirements
 * Docker 20.0.0+
 * Docker Compose 1.26.0+
 
-OJO: Estas versiones se emplearon en el desarrollo del proyecto para
- mayor compatibilidad se recomienda usar estas versiones.
+FACT:These versions were used in the development of the project to
+ greater compatibility it is recommended to use these versions.
 
 
-## Levantar proyecto
+## Install
 
-Para levantar todo el proyecto (Contenedores) ejecutar el comando:
+To lift the entire project (Containers) execute the command:
 
 ```
 	docker-compose up -d --build site
 ```
 
-Instala las dependencias de Laravel mediante un container efímero de Composer:
+Install Laravel dependencies using an ephemeral Composer container:
 
 ```
 docker-compose run --rm composer update
 ```
 
-Los contenedores (Servicios) que levanta docker-compose son:
+The containers (Services) that docker-compose raises are:
 
 * nginx  :8080
 * mysql  :3306
@@ -31,32 +31,35 @@ Los contenedores (Servicios) que levanta docker-compose son:
 
 ## Modo desarrollo:
 
-Instala las dependencias de Vue mediante un container efímero de Node:
+Install Vue dependencies using an ephemeral Node container:
 
 ```
 docker-compose run --rm npm install
 ```
 
-Establece Vue.js en modo desarrollo
+Set Vue.js to development mode:
 
 ```
 docker-compose run npm run dev
+
+docker-compose run npm run watch
 ```
 
 
 ![MySql-compose](./docs/pictures/containers-docker.png)
 
-Crea un archivo para las variables env
+Create a file for env variables
+
 ```
 	cp src/.env.example src/.env
 ```
-Crea una key para Laravel
+Create a key for Laravel
 
 ```
 	docker-compose run --rm artisan key:generate
 ```
 
-Adicionalmente también se puede manejar Composer, NPM y Artisan mediante Docker. Para ello use los siguientes comandos:
+Additionally, Composer, NPM and Artisan can also be managed through Docker. To do this use the following commands:
 
 * docker-compose run --rm composer update
 * docker-compose run --rm npm run dev
@@ -64,26 +67,26 @@ Adicionalmente también se puede manejar Composer, NPM y Artisan mediante Docker
 
 ## NetWork
 
-Para facilitar la comunicación entre servicios, los containers se conectan a una red llamada **laravel**, esto crea un mayor nivel de seguridad para las aplicaciones y garantiza que solo los servicios relacionados puedan comunicarse entre sí. 
+To facilitate communication between services, containers are connected to a network called ** laravel **, this creates a higher level of security for applications and ensures that only related services can communicate with each other.
 
 
-### Volumen MySql
-En producción crear un volumen para la persistencia de mysql, crear una carpeta mysql ala altura de src, nginx y php:
+### MySQL volume
+In production create a volume for mysql persistence, create a mysql folder at the height of src, nginx and php:
 
 ```
   mkdir ./mysql
 ```
 
-Y agregar al archivo docker-compose.yaml la siguiente linea:
+And add the following line to the docker-compose.yml file:
 
 ```
 volumes:
   - ./mysql:/var/lib/mysql
 ```
 
-### Cambiar credenciales MySql
+### Change MySQL credentials
 
-Cambiar las credenciales mostradas en docker-compose.yml.
+Change the credentials shown in docker-compose.yml
 
 ![MySql-compose](./docs/pictures/mysql-compose.png)
 
