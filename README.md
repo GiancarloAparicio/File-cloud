@@ -1,4 +1,4 @@
-# Mega clone
+# File Cloud (development)
 
 ## Requirements
 * Docker 20.0.0+
