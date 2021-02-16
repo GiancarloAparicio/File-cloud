@@ -1,85 +1,52 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Laravel</title>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
- 
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-   </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-400 no-underline">Dashboard</a>
-                    @else 
-                        <a href="{{ route('login') }}" class="text-sm text-gray-400 no-underline">Login</a>
-  
-                        @if (Route::has('register'))  
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-400 no-underline">Register</a>
-                        @endif   
-                    @endauth    
-                </div>     
-            @endif
-      
-<section class="text-gray-400 body-font bg-gray-900">
-  <div class="container px-5 py-24 mx-auto">      
-    <div class="flex flex-col text-center w-full mb-20">       
-      <p class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1" >Open Source</p>
-      <p class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" data-aos="fade-up" data-aos-duration="800">File Cloud</p>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea</p>
-    </div>      
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    <div class="flex flex-wrap">      
-       
-      <x-atoms.box-wrapper >   
-        <x-atoms.title-box title="Upload Files"/>  
-        <x-atoms.content-box> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </x-atoms.content-box>
-        <a class="text-indigo-400 inline-flex items-center">Learn More   
-          <x-atoms.icons.right-arrow-icon />
-        </a>
-      </x-atoms.box-wrapper>
+    <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
-      <x-atoms.box-wrapper >
-        <x-atoms.title-box title="Download Files"/>  
-        <x-atoms.content-box> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </x-atoms.content-box>
-        <a class="text-indigo-400 inline-flex items-center">Learn More
-          <x-atoms.icons.right-arrow-icon />
-        </a>
-      </x-atoms.box-wrapper> 
+</head>
 
-      <x-atoms.box-wrapper >
-        <x-atoms.title-box title="Video Viewer"/>  
-        <x-atoms.content-box> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </x-atoms.content-box>
-        <a class="text-indigo-400 inline-flex items-center">Learn More
-          <x-atoms.icons.right-arrow-icon />
-        </a>
-      </x-atoms.box-wrapper>
+<body class="antialiased">
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
+        <x-organisms.header />
+        <section class="text-gray-400 body-font bg-gray-900">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-col text-center w-full mb-20">
+                    <p class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1">Open Source</p>
+                    <p class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" data-aos="fade-up"
+                        data-aos-duration="800">
+                        File Cloud
+                    </p>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam
+                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                    </p>
+                </div>
 
-      <x-atoms.box-wrapper >
-        <x-atoms.title-box title="Photo Viewer"/>  
-        <x-atoms.content-box> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </x-atoms.content-box>
-        <a class="text-indigo-400 inline-flex items-center">Learn More
-          <x-atoms.icons.right-arrow-icon />
-        </a>
-      </x-atoms.box-wrapper>
+                <x-organisms.group-boxes />
+
+                <button
+                    class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                    See more
+                </button>
+            </div>
+        </section>
+
 
     </div>
-    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">See more</button>
-  </div>
-</section>
+</body>
 
-
-        </div>
-    </body>
 </html>

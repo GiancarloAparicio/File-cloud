@@ -1,5 +1,5 @@
-
-<svg height="{{ $height ?? 50 }}" viewBox="0 0 128 128" width="{{ $width ?? 50 }}" xmlns="http://www.w3.org/2000/svg">
+<svg height="{{ $height ?? 50 }}" viewBox="0 0 128 128" width="{{ $width ?? 50 }}"
+    xmlns="http://www.w3.org/2000/svg">
     <g id="Circle_Grid" data-name="Circle Grid">
         <circle cx="64" cy="64" fill="#3b5059" r="64" />
     </g>
