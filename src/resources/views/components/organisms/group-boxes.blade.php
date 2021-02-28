@@ -1,4 +1,4 @@
-<div class="flex flex-wrap">
+<div class="flex flex-wrap" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
 
     <x-atoms.box-wrapper>
         <x-atoms.title-box title="Upload Files" />

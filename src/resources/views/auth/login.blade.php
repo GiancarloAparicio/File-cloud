@@ -20,7 +20,7 @@
         <h2 class="text-white text-lg mb-1 font-medium title-font"> File Cloud </h2>
         <p class="leading-relaxed mb-5"> If you don't have an account you can create your own. </p>
 
-        <x-atoms.input id="email" name="email" type="email" label="Email" :value="old('email')" autocomplete="false"/>
+        <x-atoms.input id="email" name="email" type="email" label="Email" :value="old('email')" autocomplete="false" />
 
         <x-atoms.input id="password" name="password" type="password" label="Password" autocomplete="current-password" />
 
