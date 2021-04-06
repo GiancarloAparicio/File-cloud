@@ -1,0 +1,34 @@
+{
+	"conventional-commits": {
+		"enabled": true,
+		"length": {
+			"min": 1,
+			"max": 80
+		},
+		"types": [
+			"BUILD",
+			"CI",
+			"DOCS",
+			"IMPROVEMENT",
+			"FEAT",
+			"FIX",
+			"PERF",
+			"REFACTOR",
+			"STYLE",
+			"TEST",
+			"CHORE"
+		],
+		"scripts": [
+			"blade-formatter --write ./src/resource/views/**/*.blade.php"
+		]
+	},
+
+	"semantic-versioning": {
+		"enabled": true,
+		"major": [],
+		"minor": ["FEAT", "PERF"],
+		"patch": ["FIX"],
+		"scripts": ["git status"]
+	},
+	"template-commit": "default"
+}

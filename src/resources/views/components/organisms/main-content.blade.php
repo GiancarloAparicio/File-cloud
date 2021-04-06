@@ -7,9 +7,7 @@
                         <x-particles.menu-icon width="30" height="30" />
                     </div>
                 </x-slot>
-                <x-slot name="content">
-                    <x-organisms.aside-menu class="justify-center flex"/>
-                </x-slot>
+                <x-organisms.aside-menu class="justify-center flex" />
             </x-molecules.wrappers.modal-left>
         </div>
 
@@ -18,16 +16,15 @@
                 <x-slot name="button">
                     <x-particles.photo-icon width="30" height="30" />
                 </x-slot>
-
-                <x-slot name="content">
-                    Preview
-                </x-slot>
+                <x-organisms.aside-preview class="justify-center flex" />
             </x-molecules.wrappers.modal-right>
         </div>
 
     </div>
 
     <div>
-        Content
+        <x-molecules.latest-files />
+        <x-molecules.folders />
+        <x-molecules.all-files />
     </div>
 </div>
