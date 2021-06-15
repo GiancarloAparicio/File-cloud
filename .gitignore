@@ -1,9 +1,7 @@
-node_modules
 **/*/node_modules
 **/*/public/hot
 **/*/public/storage
 **/*/storage/*.key
-vendor
 **/*/vendor
 **/*/.env
 **/*/.env.backup
@@ -13,7 +11,6 @@ vendor
 **/*/Homestead.yaml
 **/*/npm-debug.log
 **/*/yarn-error.log
-tags
 tags.*
 .vscode/*
 
@@ -84,3 +81,4 @@ Homestead.json
 *.meta.*
 _ide_*
 
+.run_app
