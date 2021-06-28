@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +17,15 @@ use App\Http\Controllers\PhotoController;
  */
 
 Route::get("/", function () {
+    if (Auth::check()) {
+        return Redirect::to("home");
+    }
+
     return view("welcome");
 });
 
 Route::middleware(["auth:sanctum", "verified"])
-    ->get("/dashboard", function () {
-        return view("dashboard");
-    })
-    ->name("dashboard");
+    ->get("/home", [HomeController::class, "index"])
+    ->name("home");
 
-Route::resource("/photos", PhotoController::class);
+Route::post("/store", [HomeController::class, "store"])->name("home.store");

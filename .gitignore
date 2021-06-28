@@ -53,6 +53,9 @@ tags
 
 
 ### Laravel ###
+src/nginx/log/**/*
+
+
 /vendor/
 node_modules/
 npm-debug.log

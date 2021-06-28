@@ -1,11 +1,11 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class {{ class }} extends FormRequest
+class ValidateFileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class {{ class }} extends FormRequest
     public function rules()
     {
         return [
-            //
+            "file" => "required|image|max:2048",
         ];
     }
 }

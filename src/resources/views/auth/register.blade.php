@@ -6,20 +6,17 @@
         <x-atoms.icons.file-cloud-icon width="95" height="95" />
     </div>
 
-    <x-jet-validation-errors class="mt-2" />
-
     <form method="POST" action="{{ route('register') }}"
         class="text-gray-400 bg-gray-900 shadow-md rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10">
         @csrf
 
-        <x-atoms.input id="name" name="name" type="name" label="Name" autocomplete="name" autofocus />
+        <x-atoms.input id="name" name="name" type="name" label="Name" autofocus />
 
-        <x-atoms.input id="email" name="email" type="email" label="Email" autocomplete="email" />
+        <x-atoms.input id="email" name="email" type="email" label="Email"  />
 
-        <x-atoms.input id="password" name="password" type="password" label="Password" autocomplete="new-password" />
+        <x-atoms.input id="password" name="password" type="password" label="Password" />
 
-        <x-atoms.input id="password_confirmation" name="password_confirmation" type="password"
-            label="Password_confirmation" autocomplete="new-password" />
+        <x-atoms.input id="password_confirmation" name="password_confirmation" type="password" label="Password confirmation" />
 
 
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

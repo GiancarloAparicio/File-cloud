@@ -6,8 +6,6 @@
         <x-atoms.icons.file-cloud-icon width="95" height="95" />
     </div>
 
-    <x-jet-validation-errors class="mt-2" />
-
     @if (session('status'))
         <div class="mb-4 font-medium text-sm text-green-600">
             {{ session('status') }}
@@ -20,9 +18,9 @@
         <h2 class="text-white text-lg mb-1 font-medium title-font"> File Cloud </h2>
         <p class="leading-relaxed mb-5"> If you don't have an account you can create your own. </p>
 
-        <x-atoms.input id="email" name="email" type="email" label="Email" :value="old('email')" autocomplete="false" />
+        <x-atoms.input id="email" name="email" type="email" label="Email" :value="old('email')"  />
 
-        <x-atoms.input id="password" name="password" type="password" label="Password" autocomplete="current-password" />
+        <x-atoms.input id="password" name="password" type="password" label="Password" />
 
         <div class="block mt-4 my-5">
             <label for="remember_me" class="flex items-center">
