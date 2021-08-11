@@ -8,6 +8,7 @@ run_main() {
 
 	else
 		docker-compose up -d --build site
+		docker-compose run --rm artisan migrate
 		docker-compose run --rm artisan storage:link
 		touch .run_app
 

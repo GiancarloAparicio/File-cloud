@@ -28,4 +28,6 @@ Route::middleware(["auth:sanctum", "verified"])
     ->get("/home", [HomeController::class, "index"])
     ->name("home");
 
-Route::post("/store", [HomeController::class, "store"])->name("home.store");
+Route::post("/store", [HomeController::class, "store"])
+    ->name("home.store")
+    ->middleware("auth");

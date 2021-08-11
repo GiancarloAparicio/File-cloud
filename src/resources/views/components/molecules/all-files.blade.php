@@ -1,4 +1,6 @@
-  <table>
+<x-organisms.wrappers.files-wrapper title='Home files:' :overflowHidden="false">
+
+<table>
       <thead class="justify-between">
           <tr class="bg-gray-800">
               <th class="px-16 py-2">
@@ -121,3 +123,5 @@
           </tr>
       </tbody>
   </table>
+
+</x-organisms.wrappers.files-wrapper>

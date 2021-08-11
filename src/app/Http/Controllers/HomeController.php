@@ -2,22 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ValidateFileRequest;
+use App\Repository\Interfaces\FileRepositoryI;
+use App\Repository\Interfaces\UserRepositoryI;
 
 class HomeController extends Controller
 {
+    private $fileRepository;
+
+    /**
+     * @param UserRepositoryI $fileRepository
+     */
+    public function __construct(
+        FileRepositoryI $fileRepository,
+        UserRepositoryI $userRepository
+    ) {
+        $this->fileRepository = $fileRepository;
+        $this->userRepository = $userRepository;
+    }
+
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view("dashboard");
+        $files = $this->userRepository->files;
+        return view("dashboard", compact("files"));
     }
 
     /**
@@ -28,19 +43,20 @@ class HomeController extends Controller
      */
     public function store(ValidateFileRequest $request)
     {
-        $name_file = $request->file("file")->getClientOriginalName();
-        $new_name = now() . "-" . Auth::user()->id . "-" . $name_file;
+        $file = $request->file("file");
+        $new_name_file = $this->fileRepository->save($file);
 
-        Storage::disk("local")->putFileAs(
-            "private/",
-            $request->file("file"),
-            $new_name
+        $this->userRepository->files()->save(
+            File::create([
+                "private" => false,
+                "original_name" => $file->getClientOriginalName(),
+                "path" => $new_name_file,
+                "user_id" => $this->userRepository->id,
+                "route_id" => $path_id ?? 1,
+            ])
         );
 
-        return Redirect::back()->with(
-            "status",
-            "Archivo guardado correctamente"
-        );
+        return Redirect::back()->with("status", "Success");
     }
 
     /**

@@ -29,7 +29,7 @@ class ValidateFileRequest extends FormRequest
     public function rules()
     {
         return [
-            "file" => "required|image|max:2048",
+            "file" => "required|max:20480",
         ];
     }
 }

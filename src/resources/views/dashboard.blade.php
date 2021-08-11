@@ -4,5 +4,4 @@
         <x-organisms.main-content />
         <x-organisms.aside-preview />
     </div>
-
 </x-app-layout>

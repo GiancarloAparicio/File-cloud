@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
         <section class="text-gray-400 body-font bg-gray-900">
             <div class="container px-5 py-24 mx-auto">
                 <div class="flex flex-col text-center w-full mb-20">
-                    <p class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1">Open Source</p>
+                    <p class="text-xs text-indigo-400 tracking-widest font-medium title-font mb-1">Saco Oliveros</p>
                     <p class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white" data-aos="fade-up"
                         data-aos-duration="800">
                         File Cloud
