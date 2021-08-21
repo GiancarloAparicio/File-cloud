@@ -1,4 +1,16 @@
 @switch( Str::of($file->original_name)->after('.') )
+    @case('mp3')
+    <span
+        class=" block bg-purple-400 p-4 text-3xl text-white text-center align-bottom rounded-lg object-cover ">{{ Str::of($file->original_name)->after('.') }}</span>
+
+    @break
+
+    @case('mp4')
+    <span
+        class=" block bg-pink-400 p-4 text-3xl text-white text-center align-bottom rounded-lg object-cover ">{{ Str::of($file->original_name)->after('.') }}</span>
+
+    @break
+
     @case('pdf')
     <span
         class=" block bg-red-400 p-4 text-3xl text-white text-center align-bottom rounded-lg object-cover ">{{ Str::of($file->original_name)->after('.') }}</span>

@@ -28,7 +28,7 @@
 
     <hr class="w-9/12"  />
 
-    <details class="w-9/12  mt-11" >
+    <details open  class="w-9/12  mt-11" >
         <summary> Home </summary>
 
 
