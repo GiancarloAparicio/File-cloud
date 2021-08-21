@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ValidateFileRequest;
 use App\Repository\Interfaces\FileRepositoryI;
@@ -15,14 +14,15 @@ class HomeController extends Controller
     private $fileRepository;
 
     /**
-     * @param UserRepositoryI $fileRepository
+     * @param UserRepositoryI $userRepository
+     * @param FileRepositoryI $fileRepository
      */
     public function __construct(
         FileRepositoryI $fileRepository,
         UserRepositoryI $userRepository
     ) {
-        $this->fileRepository = $fileRepository;
         $this->userRepository = $userRepository;
+        $this->fileRepository = $fileRepository;
     }
 
     /**
@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $files = $this->userRepository->files;
+        $files = $this->userRepository->getAuth()->files;
         return view("dashboard", compact("files"));
     }
 
@@ -45,13 +45,14 @@ class HomeController extends Controller
     {
         $file = $request->file("file");
         $new_name_file = $this->fileRepository->save($file);
+        $current_user = $this->userRepository->getAuth();
 
-        $this->userRepository->files()->save(
+        $current_user->files()->save(
             File::create([
                 "private" => false,
                 "original_name" => $file->getClientOriginalName(),
                 "path" => $new_name_file,
-                "user_id" => $this->userRepository->id,
+                "user_id" => $current_user->id,
                 "route_id" => $path_id ?? 1,
             ])
         );

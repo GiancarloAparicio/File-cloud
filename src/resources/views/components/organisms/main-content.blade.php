@@ -1,4 +1,4 @@
-<div class="flex-1 pt-1 px-2">
+<div class="bg-white flex-1 pt-1 px-2">
     <div class="flex justify-between lg:justify-end ">
         <div class="w-10 lg:hidden cursor-pointer ">
             <x-molecules.wrappers.modal-left title="File cloud">
@@ -23,9 +23,9 @@
     </div>
 
     <div>
-        <x-molecules.latest-files />
+        <x-molecules.latest-files :files="$files"/>
         <x-molecules.folders />
-        <x-molecules.all-files />
+        <x-molecules.all-files  :files="$files" />
     </div>
 
 </div>

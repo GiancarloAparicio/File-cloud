@@ -20,7 +20,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(EloquentRepositoryI::class, BaseRepository::class);
-        $this->app->bind(UserRepositoryI::class, UserCentralRepository::class);
+        $this->app->bind(UserRepositoryI::class, UserRepository::class);
         $this->app->bind(FileRepositoryI::class, FileRepository::class);
     }
 }

@@ -54,6 +54,9 @@ class User extends Authenticatable
      */
     protected $appends = ["profile_photo_url"];
 
+    /**
+     *  User has a many files
+     * */
     public function files()
     {
         return $this->hasMany(File::class, "user_id");

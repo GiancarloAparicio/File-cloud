@@ -4,7 +4,7 @@
         {{ $icon }}
     </a>
     <div class="px-3 pb-2">
-        <h1 class="text-gray-900 text-base font-medium overflow-ellipsis">{{ $name }}</h1>
-        <h3 class="text-gray-500 text-xs tracking-widest title-font ">{{ $type }}</h3>
+        <h1 class="text-gray-900 text-base font-medium truncate">{{ $name }}</h1>
+        <h3 class="text-gray-500 truncate text-xs tracking-widest title-font ">{{ $type }}</h3>
     </div>
 </div>

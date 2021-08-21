@@ -15,7 +15,7 @@ class UserRepository extends BaseRepository implements UserRepositoryI
     }
 
     /**
-     * Get current usar autentication
+     * Get current usar authentication
      *
      *  @return Illuminate\Support\Facades\Auth
      * */
