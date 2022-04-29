@@ -17,6 +17,7 @@ class HomeController extends Controller
      * @param UserRepositoryI $userRepository
      * @param FileRepositoryI $fileRepository
      */
+
     public function __construct(
         FileRepositoryI $fileRepository,
         UserRepositoryI $userRepository

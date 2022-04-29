@@ -1,0 +1,3 @@
+172.27.0.1 - - [28/Apr/2022:18:36:54 +0000] "GET / HTTP/1.1" 200 4868 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" "-"
+172.27.0.1 - - [28/Apr/2022:18:36:54 +0000] "GET /css/app.css HTTP/1.1" 200 6680487 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" "-"
+172.27.0.1 - - [28/Apr/2022:18:36:54 +0000] "GET /js/app.js HTTP/1.1" 200 743396 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36" "-"

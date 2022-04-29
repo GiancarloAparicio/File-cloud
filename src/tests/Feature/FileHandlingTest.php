@@ -16,11 +16,10 @@ class FileHandlingTest extends TestCase
      * 1. GIVEN: a logged in user
      * 2. WHEN: uploading a file
      * 3. THEN: response 201 code
-     *
      * @test
      */
 
-    function file_store_upload()
+    function save_uploaded_file()
     {
         $this->withoutExceptionHandling();
 

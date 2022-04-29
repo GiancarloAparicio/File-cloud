@@ -1,16 +1,11 @@
-# File Cloud (development)
-
 ## Requirements
+
 * Docker 20.0.0+
 * Docker Compose 1.26.0+
 
-FACT:These versions were used in the development of the project to
- greater compatibility it is recommended to use these versions.
-
-
 ## Install
 
-To lift the entire project (Containers) execute the command:
+To lift the entire project execute the command:
 
 ```
 	docker-compose up -d --build site
@@ -25,19 +20,20 @@ docker-compose run --rm composer update
 The containers (Services) that docker-compose raises are:
 
 * nginx  :8080
-* mysql  :3306
+* mysql  :3306 
 * php    :9000
+* mailhog: 8025
 
 
-## Modo desarrollo:
+## Development:
 
-Install Vue dependencies using an ephemeral Node container:
+Install dependencies using an ephemeral Node container:
 
 ```
 docker-compose run --rm npm install
 ```
 
-Set Vue.js to development mode:
+Set to development mode:
 
 ```
 docker-compose run npm run dev
@@ -67,7 +63,7 @@ Additionally, Composer, NPM and Artisan can also be managed through Docker. To d
 
 ## NetWork
 
-To facilitate communication between services, containers are connected to a network called ** laravel **, this creates a higher level of security for applications and ensures that only related services can communicate with each other.
+To facilitate communication between services, containers are connected to a network called **laravel**, this creates a higher level of security for applications and ensures that only related services can communicate with each other.
 
 
 ### MySQL volume

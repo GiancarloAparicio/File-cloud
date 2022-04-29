@@ -23,4 +23,5 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryI::class, UserRepository::class);
         $this->app->bind(FileRepositoryI::class, FileRepository::class);
     }
+    
 }

@@ -13,7 +13,7 @@ services:
             - '80:80'
         volumes:
             - ./src:/var/www/html:delegated
-            - ./src/nginx/log:/var/log/nginx:delegated
+            - ./nginx/log:/var/log/nginx:delegated
         depends_on:
             - php
             - mysql
